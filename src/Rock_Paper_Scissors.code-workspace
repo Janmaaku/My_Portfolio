@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../Rock_Paper_Scissors"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true,
+		"liveServer.settings.multiRootWorkspaceName": "Rock_Paper_Scissors"
+	}
+}
