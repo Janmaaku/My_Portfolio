@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/my_portfolio/static/css/main.079bbaad.css",
+    "main.js": "/my_portfolio/static/js/main.3d0ad0eb.js",
+    "static/media/portfolio_final.png": "/my_portfolio/static/media/portfolio_final.290e7a00c8d8822c7698.png",
+    "static/media/calculator.png": "/my_portfolio/static/media/calculator.9ea57862fe2a49485db8.png",
+    "static/media/portfolio1.png": "/my_portfolio/static/media/portfolio1.08c41eb10ae5be518c51.png",
+    "static/media/aboutme.jpg": "/my_portfolio/static/media/aboutme.485ec1eac72a21833dc7.jpg",
+    "static/media/Janm Arch Aton Rubio.pdf": "/my_portfolio/static/media/Janm Arch Aton Rubio.3c23dd09f35044edbed4.pdf",
+    "static/media/portfolio2.png": "/my_portfolio/static/media/portfolio2.f7ed5f3ebe01be2d3656.png",
+    "static/media/profile.jpg": "/my_portfolio/static/media/profile.70882a4c2def804d8b57.jpg",
+    "index.html": "/my_portfolio/index.html",
+    "main.079bbaad.css.map": "/my_portfolio/static/css/main.079bbaad.css.map",
+    "main.3d0ad0eb.js.map": "/my_portfolio/static/js/main.3d0ad0eb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.079bbaad.css",
+    "static/js/main.3d0ad0eb.js"
+  ]
+}
