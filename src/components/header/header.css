@@ -65,9 +65,9 @@ header {
 
 
 /* ================ Media Queries (Medium Devices ) =============== */
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1280px){
     header {
-        height: 68vh;
+        height: 100vh;
     }
     .cta {
         margin-top: 3rem;
@@ -90,7 +90,7 @@ header {
 @media screen and (max-width: 600px){
     header{
         height: 130vh;
-        margin-bottom: -15rem;
+        margin-bottom: 15rem;
     }
 
     .header__socials, .scroll__down {
@@ -102,8 +102,4 @@ header {
         height: 140vh;
         margin-bottom: -5rem;
     }
-
-    .header__socials, .scroll__down {
-        display: none;
-    }
-}
+} 
