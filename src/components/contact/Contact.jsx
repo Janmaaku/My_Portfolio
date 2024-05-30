@@ -1,65 +1,98 @@
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import './contact.css';
-import { MdOutlineEmail } from 'react-icons/md'
-import { RiMessengerLine } from 'react-icons/ri'
-import { BsWhatsapp } from 'react-icons/bs'
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import "./contact.css";
+import { MdOutlineEmail } from "react-icons/md";
+import { RiMessengerLine } from "react-icons/ri";
+import { BsWhatsapp } from "react-icons/bs";
 
 const Contact = () => {
+	const form = useRef();
 
-  const form = useRef();
+	const sendEmail = (e) => {
+		e.preventDefault();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+		emailjs
+			.sendForm(
+				"service_3xnyyap",
+				"template_rletqas",
+				form.current,
+				"RcSEBGwp0wEWWsF3-"
+			)
+			.then(
+				(result) => {
+					return result;
+				},
+				(error) => {
+					return error;
+				}
+			);
+	};
 
-    emailjs.sendForm('service_3xnyyap', 'template_rletqas', form.current, 'RcSEBGwp0wEWWsF3-')
-      .then((result) => {
-         return result;
-      }, (error) => {
+	return (
+		<section id="contact">
+			<h5>Get In Touch</h5>
+			<h2>Contact Me</h2>
 
-          return error;
-      });
-  };
+			<div className="container contact__container">
+				<div className="contact__options">
+					<article className="contact__option">
+						<MdOutlineEmail className="contact__option-icon" />
+						<h4>Email</h4>
+						<h5>janmaakurubio14@gmail.com</h5>
+						<a
+							href="mailto:janmaakurubio14@gmail.com"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Send a message
+						</a>
+					</article>
 
-  return (
-    <section id='contact'>
-       <h5>Get In Touch</h5>
-       <h2>Contact Me</h2>
+					<article className="contact__option">
+						<RiMessengerLine className="contact__option-icon" />
+						<h4>Messenger</h4>
+						<h5>Janm Arch Rubio</h5>
+						<a href="https://m.me/janmaaku" target="_blank" rel="noreferrer">
+							Send a message
+						</a>
+					</article>
 
-       <div className='container contact__container'>
-          <div className='contact__options'>
-            <article className='contact__option'>
-            <MdOutlineEmail className='contact__option-icon'/>
-            <h4>Email</h4>
-            <h5>janmaakurubio14@gmail.com</h5>
-            <a href='mailto:janmaakurubio14@gmail.com' target="_blank">Send a message</a>
-            </article>
+					<article className="contact__option">
+						<BsWhatsapp className="contact__option-icon" />
+						<h4>WhatsApp</h4>
+						<h5>+63 9497405563</h5>
+						<a
+							href="https://api.whatsapp.com/send?phone+639497405563"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Send a message
+						</a>
+					</article>
+				</div>
+				{/* End of Contact options */}
 
-            <article className='contact__option'>
-            < RiMessengerLine  className='contact__option-icon'/>
-            <h4>Messenger</h4>
-            <h5>Janm Arch Rubio</h5>
-            <a href='https://m.me/janmaaku' target="_blank">Send a message</a>
-            </article>
+				<form ref={form} onSubmit={sendEmail}>
+					<input
+						type="text"
+						name="name"
+						placeholder="Your Full Name"
+						required
+					/>
+					<input type="email" name="email" placeholder="Your Email" required />
+					<textarea
+						name="message"
+						rows="7"
+						placeholder="Your Message"
+						required
+					></textarea>
+					<button type="submit" className="btn btn-primary">
+						Send Message
+					</button>
+				</form>
+			</div>
+		</section>
+	);
+};
 
-            <article className='contact__option'>
-            < BsWhatsapp className='contact__option-icon'/>
-            <h4>WhatsApp</h4>
-            <h5>+63 9497405563</h5>
-            <a href='https://api.whatsapp.com/send?phone+639497405563' target="_blank">Send a message</a>
-            </article>
-          </div>
-          {/* End of Contact options */}
-   
-       <form ref={form} onSubmit={sendEmail}>
-          <input type="text" name='name' placeholder='Your Full Name' required/>
-          <input type="email" name='email' placeholder='Your Email' required/>
-          <textarea name='message' rows="7" placeholder='Your Message' required></textarea>
-          <button type='submit' className='btn btn-primary'>Send Message</button>
-       </form>
-       </div>
-    </section>
-  )
-}
-
-export default Contact
+export default Contact;

@@ -27,7 +27,7 @@ header {
     gap: 0.8rem;
     position: absolute;
     left: 0;
-    bottom: 20rem;;
+    bottom: 16rem;;
 }
 
 .header__socials::after {
@@ -45,7 +45,7 @@ header {
     height: 30rem;
     position: absolute;
     left: calc(50% - 11rem);
-    margin-top: 10rem;
+    margin-top: 6rem;
     border-radius: 12rem 12rem 0 0;
     overflow: hidden;
     padding: 9rem 1.5rem 1.5rem 1.5rem;
@@ -65,29 +65,15 @@ header {
 
 
 /* ================ Media Queries (Medium Devices ) =============== */
-@media screen and (max-width: 1280px){
+@media screen and (min-width: 1024px){
     header {
-        height: 100vh;
+        height: 148vh;
     }
-    .cta {
-        margin-top: 3rem;
-    }
-    .header__socials, .scroll__down {
-        bottom: 4rem;
-    }
-}
-@media screen and (max-width: 800px){
-    header {
-        height: 100vh;
-    }
-    .header__socials, .scroll__down {
-        display: none;
-    }
-}
+} 
 
 
 /* ================ Media Queries (Small Devices ) =============== */
-@media screen and (max-width: 600px){
+ @media screen and (min-width: 768px) and (max-width: 1023px) {
     header{
         height: 130vh;
         margin-bottom: 15rem;
@@ -96,10 +82,14 @@ header {
     .header__socials, .scroll__down {
         display: none;
     }
-}
-@media screen and (max-width: 400px){
+} 
+@media  screen and (min-width: 400px)  and (max-width: 767px) {
     header{
-        height: 140vh;
-        margin-bottom: -5rem;
+        height: 128vh;
+        margin-bottom: 5rem;
+    }
+
+    .header__socials, .scroll__down {
+        display: none;
     }
 } 

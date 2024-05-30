@@ -1,98 +1,60 @@
-import React from 'react'
-import './experience.css'
-import { BsPatchCheckFill } from 'react-icons/bs'
+import React from "react";
+import "./experience.css";
+import { BsPatchCheckFill } from "react-icons/bs";
 const Experience = () => {
-  return (
-    <section id='experience'>
-      <h5>What Skills I Have</h5>
-      <h2>My Experience</h2>
-    
-      <div className="container experience__container">
-        <div className="experience__frontend">
-          <h3>Frontend Development</h3>
-          <div className='experience__content'>
-            <article className='experience__details'>
-                <BsPatchCheckFill className='experience_details-icon'/>
-                <div>
-                <h4>HTML</h4>
-                <small className='text-light'>Experienced</small>
-                </div>
-            </article>
-            <article className='experience__details'>
-                <BsPatchCheckFill className='experience_details-icon'/>
-                <div>
-                <h4>CSS</h4>
-                <small className='text-light'>Intermediate</small>
-                </div>
-            </article>
-            <article className='experience__details'>
-                <BsPatchCheckFill className='experience_details-icon'/>
-                <div>
-                <h4>Javascript</h4>
-                <small className='text-light'>Experienced</small>
-                </div>
-            </article>
-            <article className='experience__details'>
-                <BsPatchCheckFill className='experience_details-icon'/>
-                <div>
-                <h4>Bootstrap</h4>
-                <small className='text-light'>Experienced</small>
-                </div>
-            </article>
-            <article className='experience__details'>
-                <BsPatchCheckFill className='experience_details-icon'/>
-              <div>
-              <h4>Tailwind</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
-            <article className='experience__details'>
-                <BsPatchCheckFill className='experience_details-icon'/>
-                <div>
-                <h4>React</h4>
-                <small className='text-light'>Experienced</small>
-                </div>
-            </article>
-          </div>
-        </div>
-        {/* End of Frontend */}
-        <div className="experience__backend">
-        <h3>Backend Development</h3>
-          <div className='experience__content'>
-            <article className='experience__details'>
-                <BsPatchCheckFill className='experience_details-icon'/>
-                <div>
-                <h4>PHP</h4>
-                <small className='text-light'>Experienced</small>
-                </div>
-            </article>
-            <article className='experience__details'>
-                <BsPatchCheckFill className='experience_details-icon'/>
-                <div>
-                <h4>MySQL</h4>
-                <small className='text-light'>Intermediate</small>
-                </div>
-            </article>
-            <article className='experience__details'>
-                <BsPatchCheckFill className='experience_details-icon'/>
-                <div>
-                <h4>Node JS</h4>
-                <small className='text-light'>Experienced</small>
-                </div>
-            </article>
-            <article className='experience__details'>
-                <BsPatchCheckFill className='experience_details-icon'/>
-                <div>
-                <h4>Firebase</h4>
-                <small className='text-light'>Experienced</small>
-                </div>
-            </article>
-            </div> 
-        </div> 
-      </div>
+	const frontendTechnologies = [
+		{ name: "HTML", experience: "Experienced" },
+		{ name: "CSS", experience: "Intermediate" },
+		{ name: "Javascript", experience: "Experienced" },
+		{ name: "Bootstrap", experience: "Experienced" },
+		{ name: "Tailwindcss", experience: "Experienced" },
+		{ name: "React", experience: "Experienced" },
+		{ name: "RESTful API", experience: "Experienced" },
+	];
 
-    </section>
-  )
-}
+	const backendTechnologies = [
+		{ name: "PHP", experience: "Experienced" },
+		{ name: "MySQL", experience: "Intermediate" },
+		{ name: "Node JS", experience: "Experienced" },
+		{ name: "Firebase", experience: "Experienced" },
+		{ name: "MongoDB", experience: "Experienced" },
+		{ name: "AWS", experience: "Experienced" },
+	];
 
-export default Experience
+	const renderTechnologies = (technologies) => {
+		return technologies.map((tech, index) => (
+			<article key={index} className="experience__details">
+				<BsPatchCheckFill className="experience_details-icon" />
+				<div>
+					<h4>{tech.name}</h4>
+					<small className="text-light">{tech.experience}</small>
+				</div>
+			</article>
+		));
+	};
+
+	return (
+		<section id="experience">
+			<h5>What Skills I Have</h5>
+			<h2>My Experience</h2>
+
+			<div className="container experience__container">
+				<div className="experience__frontend">
+					<h3>Frontend Development</h3>
+					<div className="experience__content">
+						{renderTechnologies(frontendTechnologies)}
+					</div>
+				</div>
+
+				<div className="experience__backend">
+					<h3>Backend Development</h3>
+					<div className="experience__content">
+						{renderTechnologies(backendTechnologies)}
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+};
+
+export default Experience;
