@@ -1,55 +1,110 @@
+:root {
+	--arrow-height: 3rem;
+	--arrow-width: 3rem;
+}
+
+.carousel-container {
+	position: relative;
+	align-items: center;
+	overflow: hidden;
+	margin: 0 5rem; /* Center the carousel horizontally */
+	padding: 0 10rem; /* Add padding to the left and right */
+}
+
+.carousel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.5s ease;
+	gap: 2.5rem;
+}
+
+.carousel-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: none;
+	color: var(--color-primary);
+	height: 10rem;
+	width: 5rem;
+	cursor: pointer;
+}
+
+.arrow__left,
+.arrow__right {
+	height: var(--arrow-height);
+	width: var(--arrow-width);
+}
+
+.arrow__left:hover {
+	color: #1b75b4;
+}
+
+.prev {
+	left: 0;
+}
+
+.next {
+	right: 0;
+}
+
 .portfolio__container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+	display: flex;
+	gap: 2.5rem;
 }
 
 .portfolio__item {
-    background: var(--color-bg-variant);
-    padding: 1.3rem;
-    border-radius: 2rem;
-    border: 1px solid transparent;
-    transition: var(--transition);
+	flex: 1 0 33.3333%; /* Adjust according to your design */
+	background: var(--color-bg-variant);
+	padding: 1.3rem;
+	border-radius: 2rem;
+	border: 1px solid transparent;
+	transition: var(--transition);
 }
 
 .portfolio__item:hover {
-    border-color: var(--color-primary-varitant);
-    background: transparent;
+	border-color: var(--color-primary-varitant);
+	background: transparent;
 }
+
 .images {
-        height: 20rem;
+	max-width: 100%;
+	height: 15rem;
 }
 
 .portfolio__item-image {
-    border-radius: 1.5rem;
-    overflow: hidden;
+	border-radius: 1.5rem;
+	overflow: hidden;
 }
 
-
-
 .portfolio__item h3 {
-    margin: 1.2rem 0 2rem;
+	margin: 1.2rem 0 2rem;
 }
 
 .portfolio__item-cta {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1rem;
 }
 
 /* ================ Media Queries (Medium Devices ) =============== */
-@media screen and (max-width: 1024px){
-    .portfolio__container {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.2rem;
-    }
-   
+@media screen and (max-width: 1024px) {
+	.carousel-container  {
+		grid-template-columns: 1fr 1fr;
+		gap: 1.2rem;
+	}
+	.images {
+		height: 15rem; /* Reset height for smaller devices */
+	}
 }
 
 /* ================ Media Queries (Small Devices ) =============== */
-@media screen and (max-width: 600px){
-   .portfolio__container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-   }
+@media screen and (max-width: 600px) {
+	.carousel-container  {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+	.images {
+		height: 15rem; /* Set height to 100% for smaller devices */
+	}
 }

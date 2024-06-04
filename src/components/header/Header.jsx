@@ -16,7 +16,7 @@ const Header = () => {
 					<img
 						src="https://res.cloudinary.com/dqig7qaz7/image/upload/v1707281587/my_portfolio/profile/img_1_vpbkjy.png"
 						alt="me"
-						className="images"
+						className="imgs"
 					/>
 				</div>
 
