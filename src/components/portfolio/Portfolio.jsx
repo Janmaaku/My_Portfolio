@@ -13,7 +13,6 @@ const Portfolio = () => {
 	const [isSliding, setIsSliding] = useState(false);
 	const [itemsToShow, setItemsToShow] = useState(3);
 
-
 	const data = [
 		{
 			id: 1,
@@ -43,7 +42,6 @@ const Portfolio = () => {
 		},
 	];
 
-  
 	const handleNext = () => {
 		if (isSliding) return;
 		setIsSliding(true);
@@ -102,3 +100,39 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
+// import React, { useState, useEffect } from 'react';
+// import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+
+// const Portfolio = () => {
+//   const [bgColor, setBgColor] = useState('white');
+//   const { transcript, listening, resetTranscript, browserSupportsSpeechRecognition } = useSpeechRecognition();
+
+//   useEffect(() => {
+//     if (transcript.toLowerCase().includes('show color red')) {
+//       setBgColor('red');
+//     } else if (transcript.toLowerCase().includes('show color blue')) {
+//       setBgColor('blue');
+//     } else if (transcript.toLowerCase().includes('show color green')) {
+//       setBgColor('green');
+//     } else if (transcript.toLowerCase().includes('show color white')) {
+//       setBgColor('white');
+//     }
+//   }, [transcript]);
+
+//   if (!browserSupportsSpeechRecognition) {
+//     return <span>Browser doesn't support speech recognition.</span>;
+//   }
+
+//   return (
+//     <div style={{ backgroundColor: bgColor, height: '100vh' }}>
+//       <p>Microphone: {listening ? 'on' : 'off'}</p>
+//       <button onClick={SpeechRecognition.startListening}>Start</button>
+//       <button onClick={SpeechRecognition.stopListening}>Stop</button>
+//       <button onClick={resetTranscript}>Reset</button>
+// 			<p style={{ color: 'white' }}>{transcript}</p>
+//     </div>
+//   );
+// };
+
+// export default Portfolio;
