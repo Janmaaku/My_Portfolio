@@ -10,7 +10,7 @@ const Portfolio = () => {
 	const data = [
 		{
 			id: 1,
-			image: "https://res.cloudinary.com/dqig7qaz7/image/upload/v1717742348/my_portfolio/images/Login_tqj7xe.png",
+			image: "https://res.cloudinary.com/dqig7qaz7/image/upload/v1717742426/my_portfolio/images/Screenshot_2024-06-07_at_2.40.00_PM_xgib1e.png",
 			title: "FATrack",
 			github: "https://github.com",
 			desc: "Ionic React, Nodejs, AWS, PostgreSQL, Typescript, Tailwindcss",
@@ -43,74 +43,25 @@ const Portfolio = () => {
 
 	return (
 		<>
-		<ul class="cards">
-  <li>
-    <a href="" class="card">
-      <img src="https://res.cloudinary.com/dqig7qaz7/image/upload/v1717742348/my_portfolio/images/Login_tqj7xe.png" class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">
-          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Jessica Parker</h3>            
-            <span class="card__status">1 hour ago</span>
-          </div>
-        </div>
-        <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>      
-  </li>
-  <li>
-    <a href="" class="card">
-      <img src="https://res.cloudinary.com/dqig7qaz7/image/upload/v1717742426/my_portfolio/images/Screenshot_2024-06-07_at_2.40.00_PM_xgib1e.png" class="card__image" alt="" />
-      <div class="card__overlay">        
-        <div class="card__header">
-          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
-          <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">kim Cattrall</h3>
-            <span class="card__status">3 hours ago</span>
-          </div>
-        </div>
-        <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>
-  </li>
-  <li>
-    <a href="" class="card">
-      <img src="https://i.imgur.com/oYiTqum.jpg" class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">
-          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Jessica Parker</h3>
-            <span class="card__tagline">Lorem ipsum dolor sit amet consectetur</span>            
-            <span class="card__status">1 hour ago</span>
-          </div>
-        </div>
-        <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>
-  </li>
-  <li>
-    <a href="" class="card">
-      <img src="https://i.imgur.com/2DhmtJ4.jpg" class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">
-          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
-          <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">kim Cattrall</h3>
-            <span class="card__status">3 hours ago</span>
-          </div>          
-        </div>
-        <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>
-  </li>    
-</ul>
-		</>
+		 <ul className="cards">
+      {data.map((item) => (
+        <li key={item.id}>
+          <a href={item.demo} className="card">
+            <img src={item.image} className="card__image" alt={item.title} />
+            <div className="card__overlay">
+              <div className="card__header">
+                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                <div className="card__header-text">
+                  <h3 className="card__title">{item.title}</h3>            
+                  <span className="card__status">{item.desc}</span>
+                </div>
+              </div>
+              <p className="card__description">{item.desc}</p>
+            </div>
+          </a>      
+        </li>
+      ))}
+    </ul>		</>
 		// <section id="portfolio">
 		// 	<h5>My Recent Work</h5>
 		// 	<h2>Portfolio</h2>

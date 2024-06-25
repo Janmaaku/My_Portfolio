@@ -24,7 +24,7 @@ body {
 .card {
   position: relative;
   display: block;
-  height: 50%;  
+  height: 20rem;  
   border-radius: calc(var(--curve) * 1px);
   overflow: hidden;
   text-decoration: none;
@@ -33,7 +33,7 @@ body {
 
 .card__image {      
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .card__overlay {
@@ -118,3 +118,9 @@ body {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }    
+
+/* @media screen and (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+} */
