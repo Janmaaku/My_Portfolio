@@ -7,6 +7,17 @@
   box-sizing: border-box;
 }
 
+.portfolio h5 {
+  text-align: center;
+  margin-top: 3rem;
+  color: var(--color-light);
+}
+
+.portfolio h2 {
+  text-align: center;
+  color: var(--color-primary);
+}
+
 body {
   font-family: 'Noto Sans JP', sans-serif;
   background-color: #fef8f8;
@@ -33,7 +44,9 @@ body {
 
 .card__image {      
   width: 100%;
-  height: 100%;
+  height: 60rem;
+  object-fit: contain;
+  transform: translateY(-25rem);
 }
 
 .card__overlay {
